@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    # @users = User.all
+     @pagy, @users = pagy(User.all, items: 10)
   end
 
   # GET /users/1 or /users/1.json
